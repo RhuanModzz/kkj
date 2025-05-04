@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Drugs - Venda de Medicamentos</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1f1f1f;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #5e2a8c; /* Roxo */
+      color: white;
+    }
+
+    header .logo {
+      font-size: 32px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    header nav ul {
+      display: flex;
+      list-style-type: none;
+    }
+
+    header nav ul li {
+      margin: 0 20px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+      color: #e0e0e0;
+    }
+
+    header .search-cart {
+      display: flex;
+      align-items: center;
+    }
+
+    header #search {
+      padding: 8px;
+      margin-right: 10px;
+      background-color: #333;
+      border: 1px solid #5e2a8c;
+      color: white;
+      border-radius: 4px;
+      width: 200px;
+    }
+
+    header #cart-button {
+      padding: 10px 20px;
+      background-color: #e0e0e0;
+      color: #5e2a8c;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    header #cart-button:hover {
+      background-color: #5e2a8c;
+      color: white;
+    }
+
+    /* Main Content */
+    main {
+      padding: 40px 20px;
+    }
+
+    .products {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .product {
+      background-color: #2e2e2e;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+      width: 250px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin: 15px 0;
+      color: #5e2a8c;
+    }
+
+    .product p {
+      margin: 10px 0;
+      color: #ccc;
+    }
+
+    .product .price {
+      color: #e0e0e0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .product button {
+      background-color: #5e2a8c;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .product button:hover {
+      background-color: #3e1e7a;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #5e2a8c;
+      color: white;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">My Drugs</div>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Produtos</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="search-cart">
+      <input type="text" id="search" placeholder="Procurar medicamentos">
+      <button id="cart-button">Carrinho (0)</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="products">
+      <h2>Venda De Opioides</h2>
+      <h2>Produtos Populares</h2>
+      <!-- Produto 1 -->
+      <div class="product" id="product1">
+        <img src="https://via.placeholder.com/200" alt="Medicamento 1">
+        <h3>Alprazolam</h3>
+        <p>Contra Ansiedade e medo</p>
+        <p class="price">R$ 15,00</p>
+        <button class="add-to-cart" data-id="1" data-name="Paracetamol" data-price="10.00">Adicionar ao Carrinho</button>
+      </div>
+      <!-- Produto 2 -->
+      <div class="product" id="product2">
+        <img src="https://via.placeholder.com/200" alt="Medicamento 2">
+        <h3>Codeine</h3>
+        <p>Alivio Para Dores</p>
+        <p class="price">R$ 25,00</p>
+        <button class="add-to-cart" data-id="2" data-name="Aspirina" data-price="15.00">Adicionar ao Carrinho</button>
+      </div>
+      <!-- Produto 3 -->
+      <div class="product" id="product3">
+        <img src="https://via.placeholder.com/200" alt="Medicamento 3">
+        <h3>Fentanyl</h3>
+        <p>Alivio De Dores Cronicas</p>
+        <p class="price">R$ 50,00</p>
+        <button class="add-to-cart" data-id="3" data-name="Ibuprofeno" data-price="20.00">Adicionar ao Carrinho</button>
+      </div>
+      <!-- Produto 4 -->
+      <div class="product" id="product4">
+        <img src="https://via.placeholder.com/200" alt="Medicamento 4">
+        <h3>Percocet</h3>
+        <p>Para dor</p>
+        <p class="price">R$ 69,99</p>
+        <button class="add-to-cart" data-id="4" data-name="Dipirona" data-price="12.00">Adicionar ao Carrinho</button>
+      </div>
+      <!-- Produto 5 -->
+      <div class="product" id="product5">
+        <img src="https://via.placeholder.com/200" alt="Medicamento 5">
+        <h3>Zolpidem</h3>
+        <p>Contra Insonia</p>
+        <p class="price">R$ 18,00</p>
+        <button class="add-to-cart" data-id="5" data-name="Omeprazol" data-price="18.00">Adicionar ao Carrinho</button>
+      </div>
+      <!-- Produto 6 -->
+      <div class="product" id="product6">
+        <img src="https://via.placeholder.com/200" alt="Medicamento 6">
+        <h3>Losartana</h3>
+        <p>Para controle da pressão</p>
+        <p class="price">R$ 30,00</p>
+        <button class="add-to-cart" data-id="6" data-name="Losartana" data-price="30.00">Adicionar ao Carrinho</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Drugs. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Inicialização do carrinho
+    let cart = [];
+
+    // Função para atualizar o botão do carrinho
+    function updateCart() {
+      const cartButton = document.getElementById('cart-button');
+      cartButton.textContent = `Carrinho (${cart.length})`;
+    }
+
+    // Função para adicionar produto ao carrinho
+    function addToCart(event) {
+      const button = event.target;
+      const productId = button.getAttribute('data-id');
+      const productName = button.getAttribute('data-name');
+      const productPrice = parseFloat(button.getAttribute('data-price'));
+
+      // Adicionar o produto ao carrinho
+      cart.push({ id: productId, name: productName, price: productPrice });
+
+      // Atualizar o botão do carrinho
+      updateCart();
+    }
+
+    // Adicionar evento de clique nos botões de adicionar ao carrinho
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', addToCart);
+    });
+  </script>
+
+</body>
+</html>
